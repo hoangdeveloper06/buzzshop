@@ -66,9 +66,7 @@
                                         <div class="col-lg-8">
                                             <div class="row">
                                                 <div class="col-lg-6">
-                                                    <div class="menu-title">
-                                                        <a href="#">Trang Phục<span class="tip tip-new">New!</span></a>
-                                                    </div>
+                                    
                                                     <ul>
                                                         <li><a href="#">Áo Thun<span class="tip tip-hot">Hot!</span></a></li>
                                                         <li><a href="#">Áo Sơ Mi</a></li>
@@ -81,9 +79,7 @@
                                                     </ul>
                                                 </div><!-- End .col-lg-6 -->
                                                 <div class="col-lg-6">
-                                                    <div class="menu-title">
-                                                        <a href="#">Phụ Kiện<span class="tip tip-new">New!</span></a>
-                                                    </div>
+                                                    
                                                     <ul>
                                                         <li><a href="#">Giày</a></li>
                                                         <li><a href="category-infinite-scroll.html">Mắt Kính</a></li>

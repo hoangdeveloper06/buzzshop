@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Slide;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     //
     public function getIndex(){
-        return view('page.home');
+        $slide = Slide::all();
+        return view('page.home',compact('slide'));
     }
     public function getAbout(){
         return view('page.about');

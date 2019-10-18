@@ -3,8 +3,9 @@
 <main class="main">
     <div class="home-slider-container">
         <div class="home-slider owl-carousel owl-theme owl-theme-light">
+            @foreach($slide as $slide)
             <div class="home-slide">
-                <div class="slide-bg owl-lazy" data-src="{{asset('')}}assets/images/slider/slide-1.jpg" style="background-position:32% center;"></div><!-- End .slide-bg -->
+            <div class="slide-bg owl-lazy" data-src="assets/images/slider/{{$slide->image}}" style="background-position:32% center;"></div><!-- End .slide-bg -->
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 offset-md-7">
@@ -21,25 +22,7 @@
                     </div><!-- End .row -->
                 </div><!-- End .container -->
             </div><!-- End .home-slide -->
-
-            <div class="home-slide">
-                <div class="slide-bg owl-lazy" data-src="{{asset('')}}assets/images/slider/slide-2.jpg" style="background-position:64% center;"></div><!-- End .slide-bg -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5 offset-md-1">
-                            <div class="home-slide-content slide-content-big">
-                                <h1>PHỤ KIỆN</h1>
-                                <h3>
-                                    <span>GIẢM GIÁ </span>
-                                    <strong>70%</strong>
-                                    <span>CHO MỌI SẢN PHẨM</span>
-                                </h3>
-                                <a href="category.html" class="btn btn-primary">MUA NGAY</a>
-                            </div><!-- End .home-slide-content -->
-                        </div><!-- End .col-lg-5 -->
-                    </div><!-- End .row -->
-                </div><!-- End .container -->
-            </div><!-- End .home-slide -->
+            @endforeach
         </div><!-- End .home-slider -->
     </div><!-- End .home-slider-container -->
 

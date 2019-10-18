@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Slide extends Migration
+class CreateCategoryProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class Slide extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('category_products', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name'); 
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class Slide extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('category_products');
     }
 }

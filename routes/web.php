@@ -42,3 +42,8 @@ Route::get('news',[
     'as'=>'tin-tuc',
     'uses'=>'PageController@getNew'
 ]);
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
