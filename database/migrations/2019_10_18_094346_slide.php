@@ -14,12 +14,6 @@ class Slide extends Migration
     public function up()
     {
         //
-        Schema::create('slide', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->string('link');
-            $table->string('image');
-       
-        }); 
     }
 
     /**
@@ -30,6 +24,5 @@ class Slide extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('slide');
     }
 }
