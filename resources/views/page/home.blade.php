@@ -98,12 +98,15 @@
                             <a href="product.html">{{$sale->name}}</a>
                         </h2>
                         <div class="price-box">
-                            <span class="old-price">{{$sale->unit_price}}&#8363</span>
+                            
                                 @php
                                     $promotion_price = ($sale->unit_price)-(($sale->unit_price)*20)/100;
                                 @endphp
                             @if (($sale->status)==1)
-                                <span class="product-price">{{$promotion_price}}&#8363</span>
+                                <span class="old-price">{{$sale->unit_price}}&#8363</span>
+                                <span class="product-price">{{$promotion_price}}&#8363</span>   
+                            @else
+                                <span class="product-price">{{$sale->unit_price}}&#8363</span>
                             @endif
                         </div><!-- End .price-box -->
     
