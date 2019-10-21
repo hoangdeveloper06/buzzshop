@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('header',function($view){
             $category = Category::all();
             $view -> with('category_name',$category);
+            
         });
     }
 }

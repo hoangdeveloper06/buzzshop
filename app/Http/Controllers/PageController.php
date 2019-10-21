@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Slide;
-use App\Banner;
+use App\Product;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -10,8 +10,8 @@ class PageController extends Controller
     //
     public function getIndex(){
         $slide = Slide::all();
-        $banner = Banner::all();
-        return view('page.home',compact('slide','banner'));
+        $top_sale = Product::all();
+        return view('page.home',['slide'=>$slide, 'top_sale'=>$top_sale]);
     }
     public function getAbout(){
         return view('page.about');
