@@ -65,32 +65,13 @@
                                     <div class="row">
                                         <div class="col-lg-8">
                                             <div class="row">
-                                                <div class="col-lg-6">
-                                    
-                                                    <ul>
-                                                        <li><a href="#">Áo Thun<span class="tip tip-hot">Hot!</span></a></li>
-                                                        <li><a href="#">Áo Sơ Mi</a></li>
-                                                        <li><a href="#">Quần Jeans<span class="tip tip-new">New</span></a></li>
-                                                        <li><a href="#">Quần Đùi</a></li>
-                                                        <li><a href="#">Đầm</a></li>
-                                                        <li><a href="#">Váy</a></li>
-                                                        <li><a href="#">Áo Ba Lỗ</a></li>
-                                                        <li><a href="#">Áo Khoắc</a></li>
-                                                    </ul>
-                                                </div><!-- End .col-lg-6 -->
-                                                <div class="col-lg-6">
-                                                    
-                                                    <ul>
-                                                        <li><a href="#">Giày</a></li>
-                                                        <li><a href="category-infinite-scroll.html">Mắt Kính</a></li>
-                                                        <li><a href="category.html">Túi Xách</a></li>
-                                                        <li><a href="category-4col.html">Balo Thời Trang<span class="tip tip-new">New</span></a></li>
-                                                        <li><a href="category-5col.html">Mũ Thời Trang</a></li>
-                                                        <li><a href="category-6col.html">Dép Thời Trang</a></li>
-                                                        <li><a href="category-7col.html">Váy Chống Nắng<span class="tip tip-hot">Hot!</span></a></li>
-                                                        <li><a href="category-8col.html">Khăn Choàng</a></li>
-                                                    </ul>
-                                                </div><!-- End .col-lg-6 -->
+                                                @foreach ($category_name as $category_name)
+                                                    <div class="col-lg-6">
+                                                        <ul>                                                            
+                                                            <li><a href="#">{{$category_name->name}}</a></li>
+                                                        </ul>
+                                                    </div><!-- End col-lg-6 -->  
+                                                @endforeach
                                             </div><!-- End .row -->
                                         </div><!-- End .col-lg-8 -->
                                         <div class="col-lg-4">

@@ -5,7 +5,7 @@
         <div class="home-slider owl-carousel owl-theme owl-theme-light">
             @foreach($slide as $slide)
             <div class="home-slide">
-            <div class="slide-bg owl-lazy" data-src="assets/images/slider/{{$slide->image}}" style="background-position:32% center;"></div><!-- End .slide-bg -->
+            <div class="slide-bg owl-lazy" data-src="assets/images/slider/{{$slide->name}}" style="background-position:32% center;"></div><!-- End .slide-bg -->
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 offset-md-7">
