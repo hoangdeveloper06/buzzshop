@@ -51,7 +51,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/buzzshop/public/storage',
+            'url' => env('APP_URL').'/buzzshop/public/storage/pages',
             'visibility' => 'public',
         ],
 
