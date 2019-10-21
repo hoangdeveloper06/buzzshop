@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->double('unit_price');
-            $table->increment('promotion_price');
-            $table->tinyInteger('status');
+            $table->double('promotion');
+            $table->string('image');
             $table->timestamps();
         });
     }

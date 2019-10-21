@@ -75,7 +75,7 @@
         <div class="owl-carousel owl-theme featured-products">
             @foreach ($top_sale as $sale)
             @php
-                $img=json_decode($sale->img);
+                $img=json_decode($sale->image);
             @endphp
             
                 <div class="product">
@@ -86,7 +86,7 @@
                         </a>
                         <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
                             @if (($sale->status)==1)
-                                <span class="product-label label-sale">{{$sale->promotion_price}}%</span>
+                                <span class="product-label label-sale">{{$sale->promotion}}%</span>
                                 
                                 @elseif (($sale->hot)==1)
                                 <span class="product-label label-hot">Hot</span>
@@ -98,13 +98,13 @@
                             <a href="product.html">{{$sale->name}}</a>
                         </h2>
                         <div class="price-box">
+                            <span class="old-price">{{$sale->unit_price}}&#8363</span>
+                                @php
+                                    $promotion_price = ($sale->unit_price)-(($sale->unit_price)*20)/100;
+                                @endphp
                             @if (($sale->status)==1)
-                                <span class="product-price">70&#8363</span>
-                            @else
-                                
+                                <span class="product-price">{{$promotion_price}}&#8363</span>
                             @endif
-                            <span class="old-price">90&#8363</span>
-                            <span class="product-price">70&#8363</span>
                         </div><!-- End .price-box -->
     
                         <div class="product-details-inner">
