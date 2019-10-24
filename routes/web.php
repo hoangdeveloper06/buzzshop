@@ -32,6 +32,12 @@ Route::get('products',[
     'uses'=>'PageController@getProduct'
 ]);
 
+//Trang chi tiết sản phẩm
+Route::get('product_detail',[
+    'as'=>'chi-tiet-san-pham',
+    'uses'=>'PageController@getProductDetail'
+]);
+
 //Trang danh sách sản phẩm theo danh muc
 Route::get('categories/{type}',[
     'as'=>'san-phan-danh-muc',
