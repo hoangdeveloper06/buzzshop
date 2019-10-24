@@ -11,8 +11,8 @@
             <div class="container">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index">Trang Chủ</a></li>
-                    <li class="breadcrumb-item"><a href="index">Trang Chủ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Sản Phẩm</li>
+                    <li class="breadcrumb-item"><a href="#">Sản Phẩm</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{$category_type->name}}</li>
                 </ol>
             </div><!-- End .container -->
         </nav>
@@ -29,24 +29,12 @@
                     <div class="toolbox-item toolbox-sort select-custom">
                         <a class="sort-menu-trigger" href="#">Size</a>
                         <ul class="sort-list">
-                            <li>Extra Large</li>
-                            <li>Large</li>
-                            <li>Medium</li>
-                            <li>Small</li>
-                        </ul>
-                    </div><!-- End .toolbox-item -->
-
-                    <div class="toolbox-item toolbox-sort select-custom">
-                        <a class="sort-menu-trigger" href="#">Color</a>
-                        <ul class="sort-list">
-                            <li>Black</li>
-                            <li>Blue</li>
-                            <li>Brown</li>
-                            <li>Green</li>
-                            <li>Indigo</li>
-                            <li>Light Blue</li>
-                            <li>Red</li>
-                            <li>Yellow</li>
+                                <li class="active"><a href="#">S</a></li>
+                                <li><a href="#">M</a></li>
+                                <li><a href="#">L</a></li>
+                                <li><a href="#">XL</a></li>
+                                <li><a href="#">2XL</a></li>
+                                <li><a href="#">3XL</a></li>
                         </ul>
                     </div><!-- End .toolbox-item -->
 
@@ -113,7 +101,7 @@
                             <figure class="product-image-container">
                                 <a href="product.html" class="product-image">
                                     <img src="{{Voyager::image($img[0])}}" alt="product">
-                                    <img src="{{Voyager::image($img[3])}}" class="hover-image" alt="product">
+                                    <img src="{{Voyager::image($img[2])}}" class="hover-image" alt="product">
                                 </a>
                                 <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><span>Quick View</span></a>
                                 <span class="product-label label-sale">-20%</span>
