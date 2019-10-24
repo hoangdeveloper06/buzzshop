@@ -27,8 +27,14 @@ Route::get('about',[
 ]);
 
 //Trang danh sách sản phẩm
-Route::get('categories',[
-    'as'=>'loai-san-pham',
+Route::get('products',[
+    'as'=>'san-pham',
+    'uses'=>'PageController@getProduct'
+]);
+
+//Trang danh sách sản phẩm theo danh muc
+Route::get('categories/{type}',[
+    'as'=>'san-phan-danh-muc',
     'uses'=>'PageController@getCategory'
 ]);
 

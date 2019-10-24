@@ -156,217 +156,63 @@
 
     <div class="container mb-2 mb-lg-4 mb-xl-5">
         <h2 class="title text-center mb-3">SẢN PHẨM MỚI</h2>
-        <div class="owl-carousel owl-theme new-products">
-            <div class="product">
-                <figure class="product-image-container">
-                    <a href="product.html" class="product-image">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-1.jpg" alt="product">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-1-2.jpg" class="hover-image" alt="product">
-                    </a>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
-                </figure>
-                <div class="product-details">
-                    <h2 class="product-title">
-                        <a href="product.html">Mens sunglss-yellow</a>
-                    </h2>
-                    <div class="price-box">
-                        <span class="old-price">90&#8363</span>
-                        <span class="product-price">70&#8363</span>
-                    </div><!-- End .price-box -->
-
-                    <div class="product-details-inner">
-                        <div class="product-action">
-                            <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
-                                <span>Thêm Vào Giỏ</span>
-                            </a>
-
-                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                <span>Add to Wishlist</span>
-                            </a>
-
-                            <a href="#" class="paction add-compare" title="Add to Compare">
-                                <span>Add to Compare</span>
-                            </a>
-                        </div><!-- End .product-action -->
-                    </div><!-- End .product-details-inner -->
-                </div><!-- End .product-details -->
-            </div><!-- End .product -->
-
-            <div class="product">
-                <figure class="product-image-container">
-                    <a href="product.html" class="product-image">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-2.jpg" alt="product">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-2-2.jpg" class="hover-image" alt="product">
-                    </a>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
-                    <span class="product-label label-sale">-20%</span>
-                </figure>
-                <div class="product-details">
-                    <h2 class="product-title">
-                        <a href="product.html">Mens sunglss-black</a>
-                    </h2>
-                    <div class="price-box">
-                        <span class="product-price">60</span>
-                    </div><!-- End .price-box -->
-
-                    <div class="product-details-inner">
-                        <div class="product-action">
-                            <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
-                                <span>Thêm Vào Giỏ</span>
-                            </a>
-
-                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                <span>Add to Wishlist</span>
-                            </a>
-
-                            <a href="#" class="paction add-compare" title="Add to Compare">
-                                <span>Add to Compare</span>
-                            </a>
-                        </div><!-- End .product-action -->
-                    </div><!-- End .product-details-inner -->
-                </div><!-- End .product-details -->
-            </div><!-- End .product -->
-
-            <div class="product">
-                <figure class="product-image-container">
-                    <a href="product.html" class="product-image">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-3.jpg" alt="product">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-3-2.jpg" class="hover-image" alt="product">
-                    </a>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
-                    <span class="product-label label-hot">Hot</span>
-                </figure>
-                <div class="product-details">
-                    <h2 class="product-title">
-                        <a href="product.html">Mens sunglss-silver</a>
-                    </h2>
-                    <div class="price-box">
-                        <span class="old-price">75</span>
-                        <span class="product-price">55</span>
-                    </div><!-- End .price-box -->
-
-                    <div class="product-details-inner">
-                        <div class="product-action">
-                            <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
-                                <span>Thêm Vào Giỏ</span>
-                            </a>
-
-                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                <span>Add to Wishlist</span>
-                            </a>
-
-                            <a href="#" class="paction add-compare" title="Add to Compare">
-                                <span>Add to Compare</span>
-                            </a>
-                        </div><!-- End .product-action -->
-                    </div><!-- End .product-details-inner -->
-                </div><!-- End .product-details -->
-            </div><!-- End .product -->
-
-            <div class="product">
-                <figure class="product-image-container">
-                    <a href="product.html" class="product-image">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-4.jpg" alt="product">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-4-2.jpg" class="hover-image" alt="product">
-                    </a>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
-                </figure>
-                <div class="product-details">
-                    <h2 class="product-title">
-                        <a href="product.html">Mens sunglss-brown</a>
-                    </h2>
-                    <div class="price-box">
-                        <span class="old-price">60</span>
-                        <span class="product-price">50</span>
-                    </div><!-- End .price-box -->
-
-                    <div class="product-details-inner">
-                        <div class="product-action">
-                            <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
-                                <span>Thêm Vào Giỏ</span>
-                            </a>
-
-                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                <span>Add to Wishlist</span>
-                            </a>
-
-                            <a href="#" class="paction add-compare" title="Add to Compare">
-                                <span>Add to Compare</span>
-                            </a>
-                        </div><!-- End .product-action -->
-                    </div><!-- End .product-details-inner -->
-                </div><!-- End .product-details -->
-            </div><!-- End .product -->
-
-            <div class="product">
-                <figure class="product-image-container">
-                    <a href="product.html" class="product-image">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-5.jpg" alt="product">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-5-2.jpg" class="hover-image" alt="product">
-                    </a>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
-                </figure>
-                <div class="product-details">
-                    <h2 class="product-title">
-                        <a href="product.html">Mens sunglss</a>
-                    </h2>
-                    <div class="price-box">
-                        <span class="product-price">80</span>
-                    </div><!-- End .price-box -->
-
-                    <div class="product-details-inner">
-                        <div class="product-action">
-                            <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
-                                <span>Thêm Vào Giỏ</span>
-                            </a>
-
-                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                <span>Add to Wishlist</span>
-                            </a>
-
-                            <a href="#" class="paction add-compare" title="Add to Compare">
-                                <span>Add to Compare</span>
-                            </a>
-                        </div><!-- End .product-action -->
-                    </div><!-- End .product-details-inner -->
-                </div><!-- End .product-details -->
-            </div><!-- End .product -->
-
-            <div class="product">
-                <figure class="product-image-container">
-                    <a href="product.html" class="product-image">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-6.jpg" alt="product">
-                        <img src="{{asset('')}}assets/images/products/sunglasses/product-6-2.jpg" class="hover-image" alt="product">
-                    </a>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
-                    <span class="product-label label-sale">-20%</span>
-                </figure>
-                <div class="product-details">
-                    <h2 class="product-title">
-                        <a href="product.html">Mens sunglss-black</a>
-                    </h2>
-                    <div class="price-box">
-                        <span class="old-price">100</span>
-                        <span class="product-price">80</span>
-                    </div><!-- End .price-box -->
-
-                    <div class="product-details-inner">
-                        <div class="product-action">
-                            <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
-                                <span>Thêm Vào Giỏ</span>
-                            </a>
-
-                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                <span>Add to Wishlist</span>
-                            </a>
-
-                            <a href="#" class="paction add-compare" title="Add to Compare">
-                                <span>Add to Compare</span>
-                            </a>
-                        </div><!-- End .product-action -->
-                    </div><!-- End .product-details-inner -->
-                </div><!-- End .product-details -->
-            </div><!-- End .product -->
+        <h5 class="title text-center mb-3">Tìm Thấy {{count($top_sale)}} sản phẩm</h5>
+        <div class="owl-carousel owl-theme featured-products">
+            @foreach ($home_new as $new)
+            @php
+                $img=json_decode($new->image);
+            @endphp
+            
+                <div class="product">
+                    <figure class="product-image-container">
+                        <a href="product.html" class="product-image">
+                            <img src="{{Voyager::image($img[0])}}" alt="product">
+                            <img src="{{Voyager::image($img[1])}}" class="hover-image" alt="product">
+                        </a>
+                        <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
+                            @if (($new->status)==1)
+                                <span class="product-label label-sale">{{$new->promotion}}%</span>
+                                
+                                @elseif (($new->hot)==1)
+                                <span class="product-label label-hot">Hot</span>
+                            @endif
+                              
+                    </figure>
+                    <div class="product-details">
+                        <h2 class="product-title">
+                            <a href="product.html">{{$new->name}}</a>
+                        </h2>
+                        <div class="price-box">
+                            
+                            @php
+                                $promotion_price = ($new->unit_price)-(($new->unit_price)*20)/100;
+                            @endphp
+                            @if (($new->status)==1)
+                                <span class="old-price">{{$new->unit_price}}&#8363</span>
+                                <span class="product-price">{{$promotion_price}}&#8363</span>   
+                            @else
+                                <span class="product-price">{{$new->unit_price}}&#8363</span>
+                            @endif
+                        </div><!-- End .price-box -->
+    
+                        <div class="product-details-inner">
+                            <div class="product-action">
+                                <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
+                                    <span>Thêm Vào Giỏ</span>
+                                </a>
+    
+                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                    <span>Add to Wishlist</span>
+                                </a>
+    
+                                <a href="#" class="paction add-compare" title="Add to Compare">
+                                    <span>Add to Compare</span>
+                                </a>
+                            </div><!-- End .product-action -->
+                        </div><!-- End .product-details-inner -->
+                    </div><!-- End .product-details -->
+                </div><!-- End .product -->  
+            @endforeach
         </div><!-- End .featured-products -->
     </div><!-- End .container -->
 

@@ -27,9 +27,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         view()->composer('header',function($view){
-            $category = Category::all();
-            $view -> with('category_name',$category);
-            
+            $category_type = Category::all();
+            $view -> with('category_type',$category_type);  
         });
     }
 }

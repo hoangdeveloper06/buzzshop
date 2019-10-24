@@ -60,15 +60,15 @@
                         <ul class="menu sf-arrows">
                             <li class="active"><a href="index">Trang Chủ</a></li>
                             <li>
-                                <a href="categories" class="sf-with-ul">Sản Phẩm</a>
+                                <a href="products" class="sf-with-ul">Sản Phẩm</a>
                                 <div class="megamenu megamenu-fixed-width">
                                     <div class="row">
                                         <div class="col-lg-8">
                                             <div class="row">
-                                                @foreach ($category_name as $category_name)
+                                                @foreach ($category_type as $category)
                                                     <div class="col-lg-6">
                                                         <ul>                                                            
-                                                            <li><a href="#">{{$category_name->name}}</a></li>
+                                                            <li><a href="{{route('san-phan-danh-muc',$category->id)}}">{{$category->name}}</a></li>
                                                         </ul>
                                                     </div><!-- End col-lg-6 -->  
                                                 @endforeach
@@ -76,7 +76,7 @@
                                         </div><!-- End .col-lg-8 -->
                                         <div class="col-lg-4">
                                             <div class="banner">
-                                                <a href="#">
+                                                <a href="categories">
                                                     <img src="{{asset('')}}assets/images/menu-banner-2.jpg" alt="Menu banner">
                                                 </a>
                                             </div><!-- End .banner -->
