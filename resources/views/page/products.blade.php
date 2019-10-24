@@ -114,16 +114,27 @@
                                     <img src="{{Voyager::image($img[0])}}" alt="product">
                                     <img src="{{Voyager::image($img[3])}}" class="hover-image" alt="product">
                                 </a>
-                                <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><span>Quick View</span></a>
-                                <span class="product-label label-sale">-20%</span>
+                                <a href="#" class="btn-quickview" title="Quick View"><span>Chi Tiết</span></a>
+                                    @if (($product->status)==1)
+                                            <span class="product-label label-sale">-{{$product->promotion}}%</span>
+                                        @elseif (($product->hot)==1)
+                                            <span class="product-label label-hot">Hot</span>
+                                    @endif
                             </figure>
                             <div class="product-details">
                                 <h2 class="product-title">
-                                    <a href="product.html">Fleece Jacket</a>
+                                    <a href="product.html">{{$product->name}}</a>
                                 </h2>
                                 <div class="price-box">
-                                    <span class="old-price">$90</span>
-                                    <span class="product-price">$70</span>
+                                    @php
+                                        $promotion_price = ($product->unit_price)-(($product->unit_price)*20)/100;
+                                    @endphp
+                                    @if (($product->status)==1)
+                                        <span class="old-price">{{$product->unit_price}}&#8363</span>
+                                        <span class="product-price">{{$promotion_price}}&#8363</span>   
+                                    @else
+                                        <span class="product-price">{{$product->unit_price}}&#8363</span>
+                                    @endif
                                 </div><!-- End .price-box -->
     
                                 <div class="product-details-inner">

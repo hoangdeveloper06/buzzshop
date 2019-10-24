@@ -28,7 +28,8 @@ class PageController extends Controller
         $category_shop = Product::where('category_id', $type)->get();
         $category_product = Category::all();
         $category_type = Category::where('id',$type)->first();
-        return view('page.category-product', ['category_product'=>$category_product, 'category_type'=>$category_type, 'category_shop'=>$category_shop]);
+        $product_feature = Product::where('new','=','1')->get();
+        return view('page.category-product', ['category_product'=>$category_product, 'category_type'=>$category_type, 'category_shop'=>$category_shop,'product_feature'=>$product_feature]);
     }
 
     public function getContact(){
