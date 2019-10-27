@@ -11,9 +11,10 @@ class PageController extends Controller
     //
     public function getIndex(){
         $slide = Slide::all();
+        $banner_category = Category::where('hot','=','1')->take(3)->get();
         $top_sale = Product::all();
         $home_new = Product::where('new','=','1')->get();
-        return view('page.home',['slide'=>$slide, 'top_sale'=>$top_sale, 'home_new'=>$home_new]);
+        return view('page.home',['slide'=>$slide, 'banner_category' => $banner_category, 'top_sale'=>$top_sale, 'home_new'=>$home_new]);
     }
     public function getAbout(){
         
@@ -24,6 +25,12 @@ class PageController extends Controller
         $product = Product::all();
         return view('page.products',['product'=>$product]);
     }
+
+    public function getProductDetail(Request $request){
+        $productbyid = Product::where('id', $request->id)->first();
+        return view('page.productdetail',['productbyid'=>$productbyid]);
+    }
+    
     public function getCategory($type){
         $category_shop = Product::where('category_id', $type)->get();
         $category_product = Category::all();

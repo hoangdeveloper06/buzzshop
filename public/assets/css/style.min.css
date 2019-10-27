@@ -2537,12 +2537,15 @@ a:focus {
 .banner>a {
   display: block
 }
-
-.banner img {
+.banner .banner-img{
+  width: 100%;
+  height: 100%;
+}
+.banner .banner-img img {
   display: block;
   width: 100%;
   max-width: none;
-  height: auto
+  height: 100%;
 }
 
 .banner .banner-content {
@@ -4992,7 +4995,7 @@ a:focus {
 }
 
 .banners-container .banner {
-  max-height: 210px;
+  height: 250px;
   overflow: hidden
 }
 

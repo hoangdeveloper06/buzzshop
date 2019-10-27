@@ -4,24 +4,24 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="widget">
-                        <h4 class="widget-title">Contact Us</h4>
+                        <h4 class="widget-title">Liên Hệ Với Chúng Tôi</h4>
                         <ul class="contact-info">
                             <li>
                                 <i class="icon-direction"></i>
-                                <span class="contact-info-label">Address:</span>123 Street Name, City, England
+                                <span class="contact-info-label">Địa Chỉ:</span>118 Quốc lộ 13, Thủ Đức, Hồ Chí Minh
                             </li>
                             <li>
                                 <i class="icon-phone-1"></i>
-                                <span class="contact-info-label">Phone:</span>Toll Free <a href="tel:">(123) 456-7890</a>
+                                <span class="contact-info-label">Điện Thoại:</span>Hotline <a href="tel:">+84 93 177 18 93</a>
                             </li>
                             <li>
                                 <i class="icon-envolope"></i>
-                                <span class="contact-info-label">Email:</span> <a href="mailto:mail@example.com">mail@example.com</a>
+                                <span class="contact-info-label">Email:</span> <a href="mailto:mail@example.com">buzzshop@gmail.com</a>
                             </li>
                             <li>
                                 <i class="icon-clock-1"></i>
-                                <span class="contact-info-label">Working Days/Hours:</span>
-                                Mon - Sun / 9:00AM - 8:00PM
+                                <span class="contact-info-label">Thời Gian Hoạt Động</span>
+                                Thứ 2 - Chủ Nhật / 9:00 sáng - 23:00 tối
                             </li>
                         </ul>
                     </div><!-- End .widget -->
@@ -31,41 +31,41 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="widget">
-                                <h4 class="widget-title">My Account</h4>
+                                <h4 class="widget-title">VỀ CHÚNG TÔI</h4>
 
                                 <ul class="links">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="#">Orders History</a></li>
-                                    <li><a href="#">Advanced Search</a></li>
+                                    <li><a href="about.html">Giới thiệu</a></li>
+                                    <li><a href="contact.html">Liên hệ</a></li>
+                                    <li><a href="my-account.html">Cửa hàng</a></li>
+                                    <li><a href="#">Tuyển dụng</a></li>
+                                    <li><a href="#">Hỗ trợ</a></li>
                                 </ul>
                             </div><!-- End .widget -->
                         </div><!-- End .col-md-3 -->
 
                         <div class="col-md-5">
                             <div class="widget">
-                                <h4 class="widget-title">Main Features</h4>
+                                <h4 class="widget-title">HỖ TRỢ MUA HÀNG</h4>
                                 <ul class="links">
-                                    <li><a href="#">Super Fast Magento Theme</a></li>
-                                    <li><a href="#">1st Fully working Ajax Theme</a></li>
-                                    <li><a href="#">20 Unique Homepage Layouts</a></li>
-                                    <li><a href="#">Powerful Admin Panel</a></li>
-                                    <li><a href="#">Mobile & Retina Optimized</a></li>
+                                    <li><a href="#">Chính sách khách hàng</a></li>
+                                    <li><a href="#">Chính Sách Bảo Hành</a></li>
+                                    <li><a href="#">Chính sac đổi sản phẩm</a></li>
+                                    <li><a href="#">Giao hàng - thanh toán</a></li>
+                                    <li><a href="#">Bảo mật thông tin</a></li>
                                 </ul>
                             </div><!-- End .widget -->
                         </div><!-- End .col-md-5 -->
 
                         <div class="col-md-4">
                             <div class="widget widget-newsletter">
-                                <h4 class="widget-title">BE THE FIRST TO KNOW</h4>
+                                <h4 class="widget-title">HÃY LÀ NGƯỜI ĐẦU TIÊN</h4>
 
-                                <p>Get all the latest information on Events, Sales and Offers. Sign up for newsletter today.</p>
+                                <p>Nhận tất cả các thông tin mới nhất về Sự kiện, Bán hàng và Ưu đãi. Đăng ký nhận bản tin ngày hôm nay.</p>
 
                                 <form action="#">
-                                    <input type="email" class="form-control" placeholder="Email address" required>
+                                    <input type="email" class="form-control" placeholder="Địa chỉ email" required>
 
-                                    <input type="submit" class="btn" value="Go">
+                                    <input type="submit" class="btn" value="ĐĂNG KÝ">
                                 </form>
                             </div><!-- End .widget -->
                         </div><!-- End .col-md-4 -->
@@ -73,7 +73,7 @@
 
                     <div class="footer-bottom">
                         <img src="{{asset('')}}assets/images/payments.png" alt="payment methods" class="footer-payments">
-                        <p class="footer-copyright">2018 &copy; Copyright<br> All Rights Reserved.</p>
+                        <p class="footer-copyright">2019 &copy; Copyright<br> All Rights Reserved.</p>
 
                         <div class="social-icons">
                             <a href="#" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>

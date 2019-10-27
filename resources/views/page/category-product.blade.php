@@ -65,7 +65,7 @@
                 <div class="row row-sm">
                     @foreach ($category_shop as $shop_category)
                         @php
-                            $img = json_decode($shop_category->image);
+                            $img = json_decode($shop_category->images);
                         @endphp
                     <div class="col-6 col-md-4">
                             <div class="product">
@@ -153,21 +153,6 @@
 
             <aside class="sidebar-shop col-lg-3 order-lg-first">
                 <div class="sidebar-wrapper">
-                    <div class="widget">
-                        <h3 class="widget-title">
-                            <a data-toggle="collapse" href="#widget-body-1" role="button" aria-expanded="true" aria-controls="widget-body-1">Fashion</a>
-                        </h3>
-
-                        <div class="collapse show" id="widget-body-1">
-                            <div class="widget-body">
-                                <ul class="cat-list">
-                                    <li><a href="#">Women</a></li>
-                                    <li><a href="#">Men</a></li>
-                                </ul>
-                            </div><!-- End .widget-body -->
-                        </div><!-- End .collapse -->
-                    </div><!-- End .widget -->
-
                     <div class="widget">
                         <h3 class="widget-title">
                             <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true" aria-controls="widget-body-2">Price</a>
@@ -263,55 +248,72 @@
                             </div><!-- End .widget-body -->
                         </div><!-- End .collapse -->
                     </div><!-- End .widget -->
-
-                    <div class="widget widget-featured">
-                        <h3 class="widget-title">Featured Proucts</h3>
-                        
-                        <div class="widget-body">
-
-                            <div class="owl-carousel widget-featured-products">
-                                <div class="featured-col">
-                                        @foreach ($product_feature as $product)
-                                        @php
-                                            $img=json_decode($product->image);
-                                        @endphp
-                                        <div class="product product-sm">
-                                            <figure class="product-image-container">
-                                                <a href="product.html" class="product-image">
-                                                    <img src="{{Voyager::image($img[3])}}" alt="product">
-                                                </a>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h2 class="product-title">
-                                                    <a href="product.html">{{$product->name}}</a>
-                                                </h2>
-                                                <div class="ratings-container">
-                                                    <div class="product-ratings">
-                                                        <span class="ratings" style="width:80%"></span><!-- End .ratings -->
-                                                    </div><!-- End .product-ratings -->
-                                                </div><!-- End .product-container -->
-                                                <div class="price-box">
-                                                    <span class="product-price">{{$product->unit_price}}&#8363</span>
-                                                </div><!-- End .price-box -->
-                                            </div><!-- End .product-details -->
-                                        </div>
-                                        <!-- End .product -->
-
-                                        @endforeach
-
-                                </div><!-- End .featured-col -->
-
-                                
-
-                            </div><!-- End .widget-featured-slider -->
-                            
-                        </div><!-- End .widget-body -->
-                    </div><!-- End .widget -->
                 </div><!-- End .sidebar-wrapper -->
             </aside><!-- End .col-lg-3 -->
         </div><!-- End .row -->
     </div><!-- End .container -->
+    <div class = "container-fluid p-0">
+          <div class="featured-section">
+            <div class="container">
+                <h2 class="carousel-title">Featured Products</h2>
 
+                <div class="featured-products owl-carousel owl-theme owl-dots-top">
+                @foreach ($product_feature as $product)
+                    @php
+                        $img=json_decode($product->images);
+                    @endphp
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" class="product-image">
+                                <img src="{{Voyager::image($img[0])}}" alt="product">
+                                <img src="{{Voyager::image($img[1])}}" class="hover-image" alt="product">
+                            </a>
+                            <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><span>Xem Nhanh</span></a>
+                            @if (($product->status)==1)
+                                <span class="product-label label-sale">{{$product->promotion}}%</span>
+                                
+                                @elseif (($product->hot)==1)
+                                <span class="product-label label-hot">Hot</span>
+                            @endif
+                        </figure>
+                        <div class="product-details">
+                            <h2 class="product-title">
+                                <a href="{{route('chitietsanpham', $product->id)}}">{{$product->name}}</a>
+                            </h2>
+                            <div class="price-box">
+                                 @php
+                                    $promotion_price = ($product->unit_price)-(($product->unit_price)*20)/100;
+                                @endphp
+                                @if (($product->status)==1)
+                                    <span class="old-price">{{$product->unit_price}}&#8363</span>
+                                    <span class="product-price">{{$promotion_price}}&#8363</span>   
+                                @else
+                                    <span class="product-price">{{$product->unit_price}}&#8363</span>
+                                @endif
+                            </div><!-- End .price-box -->
+
+                            <div class="product-details-inner">
+                                <div class="product-action">
+                                    <a href="product.html" class="paction add-cart" title="Add to Cart">
+                                        <span>Add to Cart</span>
+                                    </a>
+
+                                    <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                        <span>Add to Wishlist</span>
+                                    </a>
+
+                                    <a href="#" class="paction add-compare" title="Add to Compare">
+                                        <span>Add to Compare</span>
+                                    </a>
+                                </div><!-- End .product-action -->
+                            </div><!-- End .product-details-inner -->
+                        </div><!-- End .product-details -->
+                    </div><!-- End .product -->
+                @endforeach
+                </div><!-- End .featured-proucts -->
+            </div><!-- End .container -->
+        </div><!-- End .featured-section -->
+    </div>
     <div class="mb-3"></div><!-- margin -->
 </main><!-- End .main -->
 @endsection

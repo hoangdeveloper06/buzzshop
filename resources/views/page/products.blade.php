@@ -105,12 +105,12 @@
             <div class="row row-sm">
                 @foreach ($product as $product)
                     @php
-                        $img = json_decode($product->image);
+                        $img = json_decode($product->images);
                     @endphp
                 <div class="col-6  col-md-4 col-lg-3">
                         <div class="product">
                             <figure class="product-image-container">
-                                <a href="product.html" class="product-image">
+                                <a href="{{route('chitietsanpham', $product->id)}}" class="product-image">
                                     <img src="{{Voyager::image($img[0])}}" alt="product">
                                     <img src="{{Voyager::image($img[3])}}" class="hover-image" alt="product">
                                 </a>

@@ -4,8 +4,11 @@
     <div class="home-slider-container">
         <div class="home-slider owl-carousel owl-theme owl-theme-light">
             @foreach($slide as $slide)
+            @php
+                $img_slide = json_decode($slide->image);
+            @endphp
             <div class="home-slide">
-            <div class="slide-bg owl-lazy" data-src="assets/images/slider/{{$slide->name}}" style="background-position:32% center;"></div><!-- End .slide-bg -->
+            <div class="slide-bg owl-lazy" data-src="{{voyager::image($slide->image)}}" style="background-position:32% center;"></div><!-- End .slide-bg -->
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 offset-md-7">
@@ -27,44 +30,21 @@
     </div><!-- End .home-slider-container -->
 
     <div class="banners-container mb-4 mb-lg-6 mb-xl-8">
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="row no-gutters">
-                <div class="col-md-4">
-                    <div class="banner">
-                        <div class="banner-content">
-                            <h3 class="banner-title">MẮT KÍNH</h3>
-
-                            <a href="category.html" class="btn">MUA NGAY</a>
-                        </div><!-- End .banner-content -->
-                        <a href="#">
-                            <img src="{{asset('')}}assets/images/banners/banner-1.jpg" alt="banner">
-                        </a>
-                    </div><!-- End .banner -->
-                </div><!-- End .col-md-4 -->
-                <div class="col-md-4">
-                    <div class="banner">
-                        <div class="banner-content">
-                            <h3 class="banner-title">GIÀY</h3>
-
-                            <a href="category.html" class="btn">MUA NGAY</a>
-                        </div><!-- End .banner-content -->
-                        <a href="#">
-                            <img src="{{asset('')}}assets/images/banners/banner-2.jpg" alt="banner">
-                        </a>
-                    </div><!-- End .banner -->
-                </div><!-- End .col-md-4 -->
-                <div class="col-md-4">
-                    <div class="banner">
-                        <div class="banner-content">
-                            <h3 class="banner-title">TÚI XÁCH</h3>
-
-                            <a href="category.html" class="btn">MUA NGAY</a>
-                        </div><!-- End .banner-content -->
-                        <a href="#">
-                            <img src="{{asset('')}}assets/images/banners/banner-3.jpg" alt="banner">
-                        </a>
-                    </div><!-- End .banner -->
-                </div><!-- End .col-md-4 -->
+                @foreach ($banner_category as $banner_category)
+                    @php
+                        $category_img = json_decode($banner_category->image);
+                    @endphp
+                    <div class="col-md-4">
+                        <div class="banner">
+                            <a href="category.html" class="banner-img">
+                                <img src="{{voyager::image($banner_category->image)}}" alt="banner">
+                            </a>
+                        </div><!-- End .banner -->
+                    </div><!-- End .col-md-4 -->  
+                @endforeach
+                
             </div><!-- End .row -->
         </div><!-- End .container -->
     </div><!-- End .banners-container -->
@@ -75,16 +55,16 @@
         <div class="owl-carousel owl-theme featured-products">
             @foreach ($top_sale as $sale)
             @php
-                $img=json_decode($sale->image);
+                $img=json_decode($sale->images);
             @endphp
             
                 <div class="product">
                     <figure class="product-image-container">
-                        <a href="product.html" class="product-image">
+                        <a href="{{route('chitietsanpham', $sale->id)}}" class="product-image">
                             <img src="{{Voyager::image($img[0])}}" alt="product">
                             <img src="{{Voyager::image($img[1])}}" class="hover-image" alt="product">
                         </a>
-                        <a href="ajax/product-quick-view.html" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
+                        <a href="{{route('chitietsanpham', $sale->id)}}" class="btn-quickview" title="Chi Tiết"><span>Chi Tiết</span></a>
                             @if (($sale->status)==1)
                                 <span class="product-label label-sale">{{$sale->promotion}}%</span>
                                 
@@ -95,7 +75,7 @@
                     </figure>
                     <div class="product-details">
                         <h2 class="product-title">
-                            <a href="product.html">{{$sale->name}}</a>
+                            <a href="{{route('chitietsanpham', $sale->id)}}">{{$sale->name}}</a>
                         </h2>
                         <div class="price-box">
                             
@@ -160,12 +140,12 @@
         <div class="owl-carousel owl-theme featured-products">
             @foreach ($home_new as $new)
             @php
-                $img=json_decode($new->image);
+                $img=json_decode($new->images);
             @endphp
             
                 <div class="product">
                     <figure class="product-image-container">
-                        <a href="product.html" class="product-image">
+                        <a href="{{route('chitietsanpham', $new->id)}}" class="product-image">
                             <img src="{{Voyager::image($img[0])}}" alt="product">
                             <img src="{{Voyager::image($img[1])}}" class="hover-image" alt="product">
                         </a>
@@ -180,7 +160,7 @@
                     </figure>
                     <div class="product-details">
                         <h2 class="product-title">
-                            <a href="product.html">{{$new->name}}</a>
+                            <a href="{{route('chitietsanpham', $new->id)}}">{{$new->name}}</a>
                         </h2>
                         <div class="price-box">
                             

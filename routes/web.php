@@ -33,8 +33,8 @@ Route::get('products',[
 ]);
 
 //Trang chi tiết sản phẩm
-Route::get('product_detail',[
-    'as'=>'chi-tiet-san-pham',
+Route::get('productdetail/{id}',[
+    'as'=>'chitietsanpham',
     'uses'=>'PageController@getProductDetail'
 ]);
 

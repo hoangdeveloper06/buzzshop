@@ -1,6 +1,8 @@
 @extends('master')
 @section('content')
 <main class="main">
+        <div class="page-header" style="background-image: url(assets/images/page-header-bg.jpg)">
+        </div><!-- End .page-header -->
         <nav aria-label="breadcrumb" class="breadcrumb-nav">
             <div class="container">
                 <ol class="breadcrumb">
@@ -16,40 +18,34 @@
                     <div class="product-single-container product-single-default">
                         <div class="row">
                             <div class="col-lg-7 col-md-6 product-single-gallery">
-                                <div class="product-slider-container product-item">
-                                    <div class="product-single-carousel owl-carousel owl-theme">
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-1.jpg" data-zoom-image="assets/images/products/zoom/product-1-big.jpg"/>
+                                    <div class="product-slider-container product-item">                                       
+                                        <div class="product-single-carousel owl-carousel owl-theme">
+                                            @for ($i = 0; $i < count(json_decode($productbyid->images)); $i++)
+                                                <div class="product-item">
+                                                    <img class="product-single-image" src="{{ voyager::image(json_decode($productbyid->images)[$i] ) }}" data-zoom-image="{{ voyager::image(json_decode($productbyid->images)[$i] ) }}"/>
+                                                </div>
+                                            @endfor
                                         </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-2.jpg" data-zoom-image="assets/images/products/zoom/product-2-big.jpg"/>
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-3.jpg" data-zoom-image="assets/images/products/zoom/product-3-big.jpg"/>
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-4.jpg" data-zoom-image="assets/images/products/zoom/product-4-big.jpg"/>
-                                        </div>
+                                        <!-- End .product-single-carousel -->
+                                        <span class="prod-full-screen">
+                                            <i class="icon-plus"></i>
+                                        </span>
                                     </div>
-                                    <!-- End .product-single-carousel -->
-                                    <span class="prod-full-screen">
-                                        <i class="icon-plus"></i>
-                                    </span>
-                                </div>
-                                <div class="prod-thumbnail row owl-dots" id='carousel-custom-dots'>
-                                    <div class="col-3 owl-dot">
-                                        <img src="assets/images/products/zoom/product-1.jpg"/>
+                                    <div class="prod-thumbnail row owl-dots" id='carousel-custom-dots'>
+                                    @foreach ($productbyid as $product_byid)
+                                        @for ($i = 0; $i < count(json_decode($productbyid->images)); $i++)
+                                            @if ($i==0)
+                                                <div class="col-3 owl-dot">
+                                                    <img src="{{ voyager::image(json_decode($productbyid->images)[$i] ) }}"/>
+                                                </div> 
+                                            @else
+                                                <div class="col-3 owl-dot">
+                                                    <img src="{{ voyager::image(json_decode($productbyid->images)[$i] ) }}"/>
+                                                </div> 
+                                            @endif
+                                        @endfor
+                                    @endforeach                 
                                     </div>
-                                    <div class="col-3 owl-dot">
-                                        <img src="assets/images/products/zoom/product-2.jpg"/>
-                                    </div>
-                                    <div class="col-3 owl-dot">
-                                        <img src="assets/images/products/zoom/product-3.jpg"/>
-                                    </div>
-                                    <div class="col-3 owl-dot">
-                                        <img src="assets/images/products/zoom/product-4.jpg"/>
-                                    </div>
-                                </div>
                             </div><!-- End .col-lg-7 -->
 
                             <div class="col-lg-5 col-md-6">
