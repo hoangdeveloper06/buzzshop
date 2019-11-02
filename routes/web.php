@@ -54,8 +54,32 @@ Route::get('news',[
     'as'=>'tin-tuc',
     'uses'=>'PageController@getNew'
 ]);
+// Route::get('signup',[
+//     'uses'=>'PageController@getSignup',
+//     'as'=>'signup'
+// ]);
 
+// Route::post('signup',[
+//     'uses'=>'PageController@postSignup',
+//     'as'=>'signup'
+// ])
+
+Route::get('add-to-cart/{id} ',[
+    'as'=>'themgiohang',
+    'uses'=> 'PageController@getAddtocart'
+]);
+
+Route::get('viewcart',[
+    'as'=>'viewcart',
+    'uses'=> 'PageController@getCart'
+]);
+
+Route::get('checkout',[
+    'as'=>'thanhtoan',
+    'uses'=> 'PageController@getCheckOut'
+]);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+

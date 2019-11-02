@@ -83,16 +83,16 @@
                                     $promotion_price = ($sale->unit_price)-(($sale->unit_price)*20)/100;
                                 @endphp
                             @if (($sale->status)==1)
-                                <span class="old-price">{{$sale->unit_price}}&#8363</span>
-                                <span class="product-price">{{$promotion_price}}&#8363</span>   
+                                <span class="old-price">{{ number_format($sale->unit_price) }}&#8363</span>
+                                <span class="product-price">{{ number_format($promotion_price) }}&#8363</span>   
                             @else
-                                <span class="product-price">{{$sale->unit_price}}&#8363</span>
+                                <span class="product-price">{{ number_format($sale->unit_price) }}&#8363</span>
                             @endif
                         </div><!-- End .price-box -->
     
                         <div class="product-details-inner">
                             <div class="product-action">
-                                <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
+                                <a href="{{route('themgiohang',$sale->id)}}" class="paction add-cart" title="Thêm Vào Giỏ">
                                     <span>Thêm Vào Giỏ</span>
                                 </a>
     
@@ -168,16 +168,16 @@
                                 $promotion_price = ($new->unit_price)-(($new->unit_price)*20)/100;
                             @endphp
                             @if (($new->status)==1)
-                                <span class="old-price">{{$new->unit_price}}&#8363</span>
-                                <span class="product-price">{{$promotion_price}}&#8363</span>   
+                                <span class="old-price">{{number_format($new->unit_price)}}&#8363</span>
+                                <span class="product-price">{{number_format($promotion_price)}}&#8363</span>   
                             @else
-                                <span class="product-price">{{$new->unit_price}}&#8363</span>
+                                <span class="product-price">{{number_format($new->unit_price)}}&#8363</span>
                             @endif
                         </div><!-- End .price-box -->
     
                         <div class="product-details-inner">
                             <div class="product-action">
-                                <a href="product.html" class="paction add-cart" title="Thêm Vào Giỏ">
+                                <a href="#" class="paction add-cart" title="Thêm Vào Giỏ">
                                     <span>Thêm Vào Giỏ</span>
                                 </a>
     

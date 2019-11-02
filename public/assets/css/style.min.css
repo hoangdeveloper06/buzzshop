@@ -699,8 +699,8 @@ a:focus {
 .cart-dropdown .dropdown-toggle {
   display: block;
   position: relative;
-  padding-right: 2.1rem;
-  padding-left: 1.7rem;
+  padding-right: 0.5rem;
+  padding-left: 0;
   color: #c0bebb;
   font-size: 1.5rem;
   font-weight: 400;
@@ -709,7 +709,7 @@ a:focus {
 }
 
 .cart-dropdown .dropdown-toggle .dropdown-cart-text {
-  margin-left: 1rem
+  margin-left: 0.5rem;
 }
 
 .cart-dropdown .dropdown-toggle::after {

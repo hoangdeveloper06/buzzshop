@@ -3,7 +3,7 @@
 <main class="main">
         <div class="page-header" style="background-image: url(assets/images/page-header-bg.jpg)">
             <div class="container">
-                <h1>About Us</h1>
+                <h1>LIÊN HỆ</h1>
             </div><!-- End .container -->
         </div><!-- End .page-header -->
         <nav aria-label="breadcrumb" class="breadcrumb-nav">

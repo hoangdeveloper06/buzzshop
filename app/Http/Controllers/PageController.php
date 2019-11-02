@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Slide;
 use App\Product;
 use App\Category;
+use App\Cart;
+use App\User;
+use Session;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -44,5 +47,48 @@ class PageController extends Controller
     }
     public function getNew(){
         return view('page.news');
+    }
+    public function getAddtocart(Request $request,$id){
+        $product = Product::find($id);
+        $oldCart = Session('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart ->add($product, $id);
+        $request->session()->put('cart', $cart);
+        return redirect()->back();
+    }
+    public function getSignup(){
+        return view('page.signup');
+    }
+    public function postSignup(Request $request){
+        $this->validate($request,[
+            'name'=>'name|required|unique:users',
+            'email'=>'email|required|unique:users',
+            'password'=>'required|min:4'
+        ]);
+        $user = new User([
+            'name'=>$request->input('name'),
+            'email'=>$request->input('email'),
+        ]);
+    }
+    public function getCart(){
+        if(!Session::has('cart')){
+            return view ('page.cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view ('page.cart', [
+            'CartItem'=>$cart->items, 
+            'totalPrice'=>$cart->totalPrice,
+            'totalQty'=>$cart->totalQty]);
+    }
+    
+    public function getCheckOut(){
+        if(!Session::has('cart')){
+            return view ('page.cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $total = $cart->totalPrice;
+        return view('page.checkout');
     }
 }

@@ -87,6 +87,7 @@
                             <li><a href="about" >Giới Thiệu</a></li>
                             <li><a href="contact" >Liên Hệ</a></li>
                             <li><a href="news">Tin Tức</a></li>
+                            <li><a href="viewcart">Giỏ Hàng</a></li>
                         </ul>
                     </nav>
 
@@ -118,72 +119,57 @@
                             </div><!-- End .header-menu -->
                         </div><!-- End .header-dropown -->
                     </div><!-- End .header-dropdowns -->
+                        <div class="dropdown cart-dropdown">
+                                <a href="viewcart" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                    <span class="dropdown-cart-icon">
+                                        <span class="cart-count">{{ Session::has('cart') ? Session::get('cart')->totalQty : '0' }}</span>                            
+                                    </span>
+                                </a>
+                                 <a href="viewcart" class="dropdown-toggle">
+                                    <span class="dropdown-cart-text">Giỏ Hàng</span>
+                                </a>
+                            @if (Session::has('cart'))
+                                <div class="dropdown-menu" >
+                                    <div class="dropdownmenu-wrapper">
+                                    @foreach ($CartItem as $cartitem)
+                                    @php
+                                        $img = json_decode($cartitem['item']['images']);
+                                    @endphp
+                                        <div class="dropdown-cart-products">
+                                                <div class="product">
+                                                    <figure class="product-image-container">
+                                                        <a href="#" class="product-image">
+                                                            <img src="{{voyager::image($img[0])}}" alt="product">
+                                                        </a>
+                                                    </figure>
+                                                    <div class="product-details">
+                                                        <h4 class="product-title">
+                                                            <a href="#">{{$cartitem['item']['name']}}</a>
+                                                        </h4>
+                                                        <span class="cart-product-info">
+                                                            <span class="cart-product-qty">{{$cartitem['qty']}}</span>
+                                                            x  {{number_format($cartitem['price'])}}&#8363
+                                                        </span>
+                                                    </div><!-- End .product-details -->
 
-                    <div class="dropdown cart-dropdown">
-                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                            <span class="dropdown-cart-icon">
-                                <span class="cart-count">2</span>
-                            </span>
-                            <span class="dropdown-cart-text">Giỏ Hàng</span>
-                        </a>
-
-                        <div class="dropdown-menu" >
-                            <div class="dropdownmenu-wrapper">
-                                <div class="dropdown-cart-products">
-                                    <div class="product">
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="{{asset('')}}assets/images/products/cart/product-1.jpg" alt="product">
-                                            </a>
-                                        </figure>
-
-                                        <div class="product-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Men Sunglasses</a>
-                                            </h4>
-
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $60.00
+                                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                                                </div><!-- End .product -->        
+                                        </div><!-- End .cart-product -->
+                                    @endforeach
+                                        <div class="dropdown-cart-total">
+                                            <span>Tổng:</span>
+                                            <span class="cart-total-price">
+                                                {{number_format(Session('cart')->totalPrice)}}&#8363
                                             </span>
-                                        </div><!-- End .product-details -->
-
-                                        <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
-                                    </div><!-- End .product -->
-
-                                    <div class="product">
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="{{asset('')}}assets/images/products/cart/product-2.jpg" alt="product">
-                                            </a>
-                                        </figure>
-                                        <div class="product-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Woman Fashion Blue</a>
-                                            </h4>
-
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $80.00
-                                            </span>
-                                        </div><!-- End .product-details -->
-                                        <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
-                                    </div><!-- End .product -->
-                                </div><!-- End .cart-product -->
-
-                                <div class="dropdown-cart-total">
-                                    <span>Tổng:</span>
-
-                                    <span class="cart-total-price">$140.00</span>
-                                </div><!-- End .dropdown-cart-total -->
-
-                                <div class="dropdown-cart-action">
-                                    <a href="cart.html" class="btn btn-primary">XEM GIỎ</a>
-                                    <a href="checkout-shipping.html" class="btn btn-outline-primary">THANH TOÁN</a>
-                                </div><!-- End .dropdown-cart-total -->
-                            </div><!-- End .dropdownmenu-wrapper -->
-                        </div><!-- End .dropdown-menu -->
-                    </div><!-- End .dropdown -->
+                                        </div><!-- End .dropdown-cart-total -->
+                                        <div class="dropdown-cart-action">
+                                            <a href="{{route('viewcart')}}" class="btn btn-primary">XEM GIỎ</a>
+                                            <a href="checkout-shipping.html" class="btn btn-outline-primary">THANH TOÁN</a>
+                                        </div><!-- End .dropdown-cart-total -->
+                                    </div><!-- End .dropdownmenu-wrapper -->
+                                </div><!-- End .dropdown-menu -->
+                            @endif
+                        </div><!-- End .dropdown --> 
                 </div><!-- End .header-row -->
             </div><!-- End .header-right -->
         </div><!-- End .container -->
